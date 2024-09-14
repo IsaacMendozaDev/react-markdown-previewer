@@ -1,0 +1,92 @@
+.sash-wrap-line {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 1s;
+  .line {
+    display: block;
+    height: 100%;
+    width: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  &.active {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  &.inactive {
+    transition: none;
+  }
+}
+
+.app-container {
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.header {
+  flex: 0 0 auto;
+}
+.main {
+  flex: 1 1 auto;
+  overflow: auto;
+}
+
+#editor {
+  resize: none;
+
+  border: none;
+  outline: none;
+
+  font-family: monospace;
+}
+#editor,
+#preview {
+  width: 100%;
+  height: 100%;
+
+  padding: 0.5rem;
+  overflow: auto;
+}
+#editor::-webkit-scrollbar,
+#preview::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+#editor:-webkit-scrollbar:vertical,
+#preview:-webkit-scrollbar:vertical {
+  width: 15px;
+}
+#editor::-webkit-scrollbar-button:increment,
+#editor::-webkit-scrollbar-button,
+#preview::-webkit-scrollbar-button:increment,
+#preview::-webkit-scrollbar-button {
+  display: none;
+}
+
+#editor::-webkit-scrollbar:horizontal,
+#preview::-webkit-scrollbar:horizontal {
+  height: 15px;
+}
+
+#editor::-webkit-scrollbar-thumb,
+#preview::-webkit-scrollbar-thumb {
+  background-color: #797979;
+  border-radius: 10px;
+  border: 2px solid #f1f2f3;
+}
+
+#editor::-webkit-scrollbar-track,
+#preview::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+@media (width <= 435px) {
+  .sash-wrap-line {
+    .line {
+      display: block;
+      height: 10px;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  }
+}
